@@ -1,38 +1,98 @@
 .App {
-  text-align: center;
-}
+  /* Basic reset for margin and padding */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+  /* Set font for better readability on all devices */
+  font-family: 'Arial', sans-serif;
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  /* Flex container for the overall app alignment */
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: flex-start;
+
+  /* Mobile-first approach with a minimum height for content visibility */
+  min-height: 100vh;
+  background-color: #ebe1cb; /* Light theme background color */
+  color: #333; /* Text color for light theme */
+}
+
+/* AppBar styling */
+.AppBar {
+  width: 100%;
   color: white;
+  background-color: #333; /* AppBar color */
 }
 
-.App-link {
-  color: #61dafb;
+/* Ensure buttons and touch targets are large enough for interaction */
+button {
+  padding: 12px 20px;
+  margin: 10px;
+  font-size: 1em; /* Readable font size for button text */
+  background-color: #4CAF50; /* Primary button color */
+  color: white; /* Button text color */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Transition for background color */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Hover effect for buttons */
+button:hover {
+  background-color: #45a049; /* Button hover state change */
+  opacity: 0.9; /* Slight transparency on hover */
+}
+
+/* Card component styling for job details */
+.card {
+  background-color: white; /* Card background color */
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); /* Card shadow for depth */
+  transition: box-shadow 0.3s ease; /* Transition for shadow */
+  border-radius: 5px; /* Slight rounding of card edges */
+  margin-bottom: 15px; /* Space between cards */
+}
+
+/* Hover effect for cards */
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2); /* Increased shadow on hover */
+}
+
+/* Card content styling */
+.card-content {
+  padding: 15px; /* Padding inside the card for spacing content */
+}
+
+/* Typography styling for headers and paragraphs */
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0.5em 0;
+}
+
+/* Specific styling for headings in the mechanic's dashboard for clarity */
+h1 {
+  font-size: 2em; /* Larger font size for main headings */
+  color: #4CAF50; /* Heading color that stands out */
+}
+
+/* Styling for non-actionable text to distinguish from buttons */
+p {
+  color: #666; /* Subtle text color for paragraphs */
+  font-size: 1em; /* Standard font size for readability */
+}
+
+/* Responsive media queries */
+@media only screen and (min-width: 600px) {
+  .card-content {
+    padding: 20px; /* Increased padding for larger screens */
   }
-  to {
-    transform: rotate(360deg);
+
+  button {
+    padding: 15px 25px;
+    font-size: 1.25em; /* Larger font size for button text on bigger screens */
+  }
+
+  h1 {
+    font-size: 2.5em;
   }
 }
